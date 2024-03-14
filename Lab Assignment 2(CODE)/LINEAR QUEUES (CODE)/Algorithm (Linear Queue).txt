@@ -1,0 +1,158 @@
+Algorithm
+front <- -1
+rear <- -1
+int arr[5]
+
+Queue()
+{
+	front <- -1
+	rear <- -1
+	for(int i <- 0; i < size, i++)
+	{
+		arr[i] <- 0
+	}
+}
+
+isEmpty()
+{
+	if front == -1 && rear == -1
+		return true
+	else
+		return false
+}
+
+isFull()
+{
+	if(rear == size - 1)
+		return true
+	else
+		return fals
+}
+
+enqueue(int val)
+{
+	if(isFull())
+	{
+		print "Queue is Full"
+		return
+	}
+	else if(isEmpty())
+	{
+		rear <- 0
+		front <- 0
+		arr[rear] <- val
+	}
+	else
+	{
+		rear++
+		arr[rear] <- val
+	}
+}
+
+dequeue()
+{
+	int x;
+	
+	if(isEmpty())
+	{
+		print "Queue is Empty"
+		return 0		
+	}		
+	else if(front == rear)
+		{
+			x <- arr[front]
+			rear <- -1
+			front <- -1
+			arr[front] <- x
+		}
+		
+	else
+		{
+			x <- arr[front]
+			arr[front] <- 0
+			front++
+			return x
+		}
+}
+
+count()
+{
+	return (rear - front + 1)
+}
+
+display()
+{
+	print "All Values in the Queue are - "
+	for(int i <- 0; i < size; i++)
+	{
+		print arr[i]
+	}
+}
+
+Create q1 of Queue
+option(int)
+value(int)
+
+Use do while loop to perform the following:
+Print the option statement on the sreen.	
+What Operation do you want to perform ? 
+Select Option(1-9).Enter 0 to Exit .
+1. To Add Elements in a queue array. 
+2. To Dequeue Elements from the queue array. 
+3. To Check if the stack in Empty or Not.
+4. To Check if the stack in Full or Not.
+5. To Count the number of Elements in the array. 
+6. To Display Elements in the screen. 
+7. To Clear up the screen.
+
+Prompt the user to enter option and the store value that 
+what entered by the user.
+
+Use switch statement to choose option.
+		switch(option)
+		{
+			case 0:
+				break;
+			
+			case 1:
+				cout<<"Enqueue Option \nEnter an item to Enqueue in the Queue"<<endl;
+				cin>>value;
+				q1.enqueue(value);
+				break;
+				
+				case 2:
+					cout<<"Dequeue Option \nDequeue Value : "<<q1.dequeue()<<endl;
+				break;
+				
+			case 3:	
+				if(q1.isEmpty())
+					cout<<"Queue is Empty"<<endl;
+				else
+					cout<<"Queue is not Empty"<<endl;		
+				break;
+				
+			case 4:	
+				if(q1.isFull())
+					cout<<"Queue is Full"<<endl;
+				else
+					cout<<"Queue is not Full"<<endl;		
+				break;			
+			
+			case 5:
+				cout<<"Count Operation \nCount of items in Queue : "<<q1.count()<<endl;;
+				break;	
+			
+			case 6:
+				cout<<"Display Function Called - "<<endl;
+				q1.display();
+				break;
+				
+			case 7:
+				system("cls");
+				break;	
+			default:
+				cout<<"Enter the propre option number"<<endl;	
+		}
+	}
+	
+Use while if the user enter 0 the program exist	
